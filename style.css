@@ -1,0 +1,248 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.chobar {
+    background-color: #261D18;
+}
+
+.saroor {
+    background-color: #C53419;
+}
+
+.a-for-arjan {
+    background-color: #D66B99;
+}
+
+.jalwa {
+    background-color: #8D58E8;
+}
+
+.awara {
+    background-color: #D45109;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    padding: 0 4rem;
+}
+
+.grid-container .left {
+    grid-column: 1 / 5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 4rem 0;
+
+}
+
+.album-title {
+    font-size: 4rem;
+    font-weight: 900;
+    text-wrap: nowrap;
+    color: #FFFFFF;
+}
+
+.album-year {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+}
+
+.album-cover {
+    width: 100%;
+}
+
+.grid-container .middle {
+    padding: 9rem 0;
+    grid-column: 6 / 10;
+}
+
+.tracks-heading,
+.about-heading {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tracklist {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.track {
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.track:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+}
+
+.grid-container .right {
+    padding: 9rem 0;
+    grid-column: 10 / 13;
+}
+
+.album-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.album-description {
+    font-size: 0.9rem;
+}
+
+.album-data-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.album-data-field::before {
+    content: attr(data-fieldname);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.streaming-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+}
+
+.streaming-icon {
+    width: 32px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.streaming-icon:hover {
+    opacity: 1;
+}
+
+/* Lyrics Overlay */
+.lyrics-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.lyrics-overlay.visible {
+    display: block;
+}
+
+.lyrics-popup {
+    height: 95vh;
+    width: 80vw;
+    border-radius: 4rem 4rem 0 0;
+    background-color: #261D18;
+    position: fixed;
+    bottom: 0;
+    left: 10vw;
+    z-index: 2;
+    display: none;
+    padding: 4rem 4rem 0 4rem;
+    overflow: scroll;
+}
+
+.lyrics-popup::-webkit-scrollbar {
+    display: none;
+}
+
+.lyrics-popup.visible {
+    display: flex;
+    gap: 8rem;
+}
+
+.close-button {
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 2rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: relative;
+    top: 1.5rem;
+    left: 92%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lyrics-popup .overlay-sub-heading {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lyrics-popup .song-details,
+.lyrics-popup .lyrics {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.data-field {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.data-field::before {
+    content: attr(data-fieldname);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.lyrics-popup .lyrics .song-section {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.lyrics-popup .lyrics .song-section::before {
+    content: attr(data-section-title);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 0.5rem;
+}
